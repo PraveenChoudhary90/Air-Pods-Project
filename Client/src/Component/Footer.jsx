@@ -2,7 +2,8 @@
 const Footer = ()=>{
     return(
         <>
-        <h3 style={{padding:"90px", textAlign:"center",fontWeight:"bold",backgroundColor:"lightgrey", textTransform:"uppercase"}} >www.airpods.com</h3>
+        <h3 style={{padding:"90px", textAlign:"center",fontWeight:"bold",
+            backgroundColor:"lightgrey", textTransform:"uppercase"}} >www.airpods.com &hearts;PraveenChoudhary</h3>
         </>
     )
 }
