@@ -9,9 +9,10 @@ import { Link } from 'react-router-dom';
 const TopNav = ()=>{
     return(
         <>
-            <Navbar expand="lg" className="bg-body-tertiary">
+        <div id="nav">
+      <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
-        <Navbar.Brand as={Link}  to="home">Navbar scroll</Navbar.Brand>
+        <Navbar.Brand as={Link}  to="home">Air-Pods-Site</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -35,6 +36,7 @@ const TopNav = ()=>{
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    </div>
 
         </>
     )

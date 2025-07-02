@@ -8,7 +8,7 @@ function Layout() {
   return (
     <>
      <TopNav/>
-     <main style={{margin:"20px"}}>
+     <main style={{marginTop:"20px", marginBottom:"20px"}}>
         <Outlet/>
      </main>
      <Footer/>
