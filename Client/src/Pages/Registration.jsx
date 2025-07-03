@@ -14,7 +14,7 @@ const Registration = ()=>{
         <h3>Regsitration User Page</h3>
         <Form>
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
+        <Form.Label>Enter Name</Form.Label>
         <Form.Control type="email" placeholder="Enter email" />
       </Form.Group>
 
