@@ -9,7 +9,7 @@ function Home(){
         <>
         <h1 style={{backgroundColor:"lightpink"}}>
         <marquee behavior="alternate" direction="left">
-         Offer:All Products have 15% Discount in Dewali Festival
+         Offer:All Products have 15% Discount in Diwali Festival
         </marquee>
         </h1>
 
