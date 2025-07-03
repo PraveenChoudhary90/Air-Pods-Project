@@ -19,9 +19,10 @@ const HandelSubmit = async(e)=>{
   e.preventDefault();
   try {
     const api = `${BASE_URL}/air/InsertUser`;
-    const response = await axios(api);
-    console.log(response.data);
+    const response = await axios.post(api, input);
     window.alert("Insert User Successfully");
+    console.log(response.data);
+
   } catch (error) {
     console.log(error);
   }
