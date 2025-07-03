@@ -55,3 +55,13 @@
   justify-content: space-evenly;
   margin-top: 20px;
 }
+
+#icon{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
+  font-size: 20px;
+  padding-right: 40px;
+
+}
