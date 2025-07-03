@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import BASE_URL from '../config/BaseUrl';
+import axios from "axios";
 
 const Registration = ()=>{
     
@@ -15,6 +17,15 @@ const Registration = ()=>{
 
 const HandelSubmit = async(e)=>{
   e.preventDefault();
+  try {
+    const api = `${BASE_URL}/air/InsertUser`;
+    const response = await axios(api);
+    console.log(response.data);
+    window.alert("Insert User Successfully");
+  } catch (error) {
+    console.log(error);
+  }
+
 }
 
 
@@ -34,23 +45,23 @@ const HandelSubmit = async(e)=>{
         <Form.Control type="text" name='name' value={input.name} onChange={HandelInput} />
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
+      <Form.Group className="mb-3" controlId="formBasicPasswordd">
         <Form.Label>Enter Email</Form.Label>
-        <Form.Control type="text" name='name' value={input.name} onChange={HandelInput}/>
+        <Form.Control type="email" name='email' value={input.email} onChange={HandelInput}/>
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
+      <Form.Group className="mb-3" controlId="formBasicPasswordg">
         <Form.Label>Enter City</Form.Label>
-        <Form.Control type="text" name='name' value={input.name} onChange={HandelInput} />
+        <Form.Control type="text" name='city' value={input.city} onChange={HandelInput} />
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
+      <Form.Group className="mb-3" controlId="formBasicPasswordv">
         <Form.Label>Enter Number</Form.Label>
-        <Form.Control type="text"name='name' value={input.name} onChange={HandelInput} />
+        <Form.Control type="text"name='number' value={input.number} onChange={HandelInput} />
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicPassword">
+      <Form.Group className="mb-3" controlId="formBasicPasswordc">
         <Form.Label>Enter Password</Form.Label>
-        <Form.Control type="password" name='name' value={input.name} onChange={HandelInput}/>
+        <Form.Control type="password" name='password' value={input.password} onChange={HandelInput}/>
       </Form.Group>
       <Button variant="primary" type="submit" onClick={HandelSubmit}>
         Submit
