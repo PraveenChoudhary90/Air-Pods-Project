@@ -30,10 +30,17 @@ const HandelInput = (e)=>{
  const HandelSubmitAdmin = async(e)=>{
     e.preventDefault();
     const api = `${BASE_URL}/air/Adminlogin`
-    const response = await axios.post(api , input);
+    try {
+      const response = await axios.post(api , input);
     console.log(response.data.msg);
-    alert(response.data.msg);
+     alert(response.data.msg);
     navigate("/admindashboard");
+    setShow(false);
+    } catch (error) {
+      alert(error.response.data.msg);
+      
+    }
+    
  }
 
 
@@ -94,22 +101,11 @@ const HandelInput = (e)=>{
         <Form.Label>Password</Form.Label>
         <Form.Control type="password" placeholder="Password" name='password' value={input.password} onChange={HandelInput} />
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
-      </Form.Group>
       <Button variant="primary" type="submit"  onClick={HandelSubmitAdmin}>
         Submit
       </Button>
     </Form>
           </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
       </Modal>
 
 
