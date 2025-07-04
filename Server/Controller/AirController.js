@@ -20,8 +20,27 @@ const InsertUser = async(req,res)=>{
     }
 }
 
+const Adminlogin = async(req,res)=>{
+    const { email, password}=req.body;
+    try {
+     const Admin  = await AirModel.findOne({email:email});
+     if(!Admin){
+        res.status(400).send({msg:"Email is Invalid"});
+     }
+     if(Admin.password!=password)
+     {
+        res.status(400).send({msg:"Password is Inavlid "})
+     }
+     res.status(200).send({msg:"Admin is Login Successfully", Admin:Admin})
+        
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 
 
 module.exports = {
-    InsertUser
+    InsertUser,
+    Adminlogin
 }

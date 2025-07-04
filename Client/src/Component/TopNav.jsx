@@ -3,21 +3,39 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { FaRegUser } from "react-icons/fa";
 import { FaUserCircle } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
-
+import BASE_URL from "../config/BaseUrl";
+import axios from "axios";
 const TopNav = ()=>{
   const [input, setInput] = useState("");
+  const navigate = useNavigate();
    
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+const HandelInput = (e)=>{
+  const name= e.target.name;
+  const value = e.target.value;
+  setInput(values=>({...values, [name]:value}));
+  console.log(input);
+}
+
+ const HandelSubmitAdmin = async(e)=>{
+    e.preventDefault();
+    const api = `${BASE_URL}/air/Adminlogin`
+    const response = await axios.post(api , input);
+    console.log(response.data.msg);
+    alert(response.data.msg);
+    navigate("/admindashboard");
+ }
+
 
 
     return(
@@ -69,17 +87,17 @@ const TopNav = ()=>{
         <Form>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email"/>
+        <Form.Control type="email" placeholder="Enter email" name='email' value={input.email} onChange={HandelInput} />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password" />
+        <Form.Control type="password" placeholder="Password" name='password' value={input.password} onChange={HandelInput} />
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicCheckbox">
         <Form.Check type="checkbox" label="Check me out" />
       </Form.Group>
-      <Button variant="primary" type="submit" >
+      <Button variant="primary" type="submit"  onClick={HandelSubmitAdmin}>
         Submit
       </Button>
     </Form>

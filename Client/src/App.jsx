@@ -5,6 +5,7 @@ import Layout from './Layout'
 import Home from './Pages/Home'
 import About from './Pages/About'
 import Registration from './Pages/Registration'
+import AdminDashboard from './Admin/AdminDashboard'
 
 function App() {
 
@@ -19,6 +20,12 @@ function App() {
      <Route path='about' element={<About/>}/>
      <Route path='registration' element={<Registration/>}/>
      </Route>
+   </Routes>
+   <Routes>
+    <Route path='admindashboard' element={<AdminDashboard/>}>
+    
+    
+    </Route>
    </Routes>
    </BrowserRouter>
     </>
