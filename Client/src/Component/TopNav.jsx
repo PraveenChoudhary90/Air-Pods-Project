@@ -95,12 +95,12 @@ const HandelInput = (e)=>{
         <Modal.Body>
         <Form>
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
+        <Form.Label> Enter Email </Form.Label>
         <Form.Control type="email" placeholder="Enter email" name='email' value={input.email} onChange={HandelInput} />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
+        <Form.Label> Enter Password</Form.Label>
         <Form.Control type="password" placeholder="Password" name='password' value={input.password} onChange={HandelInput} />
       </Form.Group>
       <Button variant="primary" type="submit"  onClick={HandelSubmitAdmin}>
