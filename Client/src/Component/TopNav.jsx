@@ -13,12 +13,17 @@ import BASE_URL from "../config/BaseUrl";
 import axios from "axios";
 const TopNav = ()=>{
   const [input, setInput] = useState("");
+  const [input1, setInput1] = useState("");
   const navigate = useNavigate();
    
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+
+  const [show1, setShow1] = useState(false);
+  const handleClose1 = () => setShow1(false);
+  const handleShow1 = () => setShow1(true);
 
 const HandelInput = (e)=>{
   const name= e.target.name;
@@ -47,6 +52,35 @@ const HandelInput = (e)=>{
 
 
 
+
+ 
+const HandelInput1 = (e)=>{
+  const name= e.target.name;
+  const value = e.target.value;
+  setInput1(values=>({...values, [name]:value}));
+  console.log(input1);
+}
+
+ const HandelSubmitCustomer = async(e)=>{
+    e.preventDefault();
+    const api = `${BASE_URL}/air/CustomerLogin`
+    try {
+      const response = await axios.post(api , input1);
+    console.log(response.data.msg);
+    localStorage.setItem("name", response.data.Customer.name);
+    localStorage.setItem("email", response.data.Customer.email);
+     alert(response.data.msg);
+    navigate("/");
+    setShow1(false);
+    } catch (error) {
+      alert(error.response.data.msg);
+      
+    }
+    
+ }
+
+
+
     return(
         <>
         <div id="nav">
@@ -65,7 +99,7 @@ const HandelInput = (e)=>{
             <Nav.Link  as={Link}  to="registration">Registration</Nav.Link>
           </Nav>
           <div id="icon">
-          <FaRegUser />
+          <FaRegUser onClick={handleShow1} />
           <FaHeart />
           <FaUserCircle onClick={handleShow} />
           </div>
@@ -104,6 +138,31 @@ const HandelInput = (e)=>{
         <Form.Control type="password" placeholder="Password" name='password' value={input.password} onChange={HandelInput} />
       </Form.Group>
       <Button variant="primary" type="submit"  onClick={HandelSubmitAdmin}>
+        Submit
+      </Button>
+    </Form>
+          </Modal.Body>
+      </Modal>
+
+
+ {/* Customer model */}
+
+ <Modal show={show1} onHide={handleClose1}>
+        <Modal.Header closeButton>
+          <Modal.Title>Customer Login</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+        <Form>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label> Enter Customer Email </Form.Label>
+        <Form.Control type="email" placeholder="Enter email" name='email' value={input1.email} onChange={HandelInput1} />
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Label> Enter Password</Form.Label>
+        <Form.Control type="password" placeholder="Password" name='password' value={input1.password} onChange={HandelInput1} />
+      </Form.Group>
+      <Button variant="primary" type="submit"  onClick={HandelSubmitCustomer}>
         Submit
       </Button>
     </Form>
