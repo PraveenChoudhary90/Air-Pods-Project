@@ -65,3 +65,28 @@
   padding-right: 40px;
 
 }
+
+
+#admin{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+#page{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#page button{
+  padding: 20px;
+  width: 250px;
+  border-radius: 40px;
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+}

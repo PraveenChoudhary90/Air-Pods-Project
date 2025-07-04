@@ -33,6 +33,8 @@ const HandelInput = (e)=>{
     try {
       const response = await axios.post(api , input);
     console.log(response.data.msg);
+    localStorage.setItem("name", response.data.Admin.name);
+    localStorage.setItem("email", response.data.Admin.email);
      alert(response.data.msg);
     navigate("/admindashboard");
     setShow(false);
