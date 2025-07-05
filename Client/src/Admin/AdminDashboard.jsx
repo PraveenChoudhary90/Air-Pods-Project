@@ -10,7 +10,9 @@ function AdminDashboard() {
         {localStorage.clear()};
         navigate("/");
      }
+ 
 
+    
 
   return (
    <>
@@ -27,7 +29,7 @@ function AdminDashboard() {
    <div id="admin">
     <div id="page">
     <Button variant="primary">Admin Dashboard</Button>
-    <Button variant="primary">Add to Products</Button>
+    <Button variant="primary" onClick={navigate("/addtocart")}>Add to Products</Button>
     <Button variant="primary">Products Details</Button>
     <Button variant="primary">Order Details</Button>
     <Button variant="primary">Admin Inf</Button>
