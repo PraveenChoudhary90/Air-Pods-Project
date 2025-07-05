@@ -84,9 +84,19 @@ const userauthenticate = async(req,res)=>{
 
 
 const InsertProduct = async(req,res)=>{
-    console.log(req.body);
-    console.log(req.files);
-    res.send("okkk");
+    const {name,brand,price,color,description} = req.body;
+    const ImageUrl = req.files.map(file=>file.path);
+    const Product  =await ProductModel.create({
+        name:name,
+        brand:brand,
+        price:price,
+        color:color,
+        description:description,
+        defaultImage:ImageUrl[0],
+        images:ImageUrl
+    })
+    console.log(Product);
+    res.status(200).send({msg:"Product Is Inserted Successfully"});
 }
 
 

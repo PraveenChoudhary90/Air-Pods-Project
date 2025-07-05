@@ -25,7 +25,7 @@ function AddtoProduct() {
     const formData = new FormData();
      
     for(let key in input){
-        formData.append(key, key[input]);
+        formData.append(key, input[key]);
     }
 
     for(var i = 0;i<image.length;i++){
