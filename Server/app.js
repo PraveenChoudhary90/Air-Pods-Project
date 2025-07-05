@@ -3,11 +3,12 @@ const app = express();
 const cors = require("cors");
 const mongoose =require("mongoose");
 require("dotenv").config();
+const path = require('path');
 const bodyParser = require("body-parser");
 const AirRoute = require("./Routes/AirRoute");
 
 app.use(cors());
-
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 // Parse incoming requests with JSON payloads
 app.use(bodyParser.json());
 
