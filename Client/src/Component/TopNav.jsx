@@ -66,10 +66,9 @@ const HandelInput1 = (e)=>{
     const api = `${BASE_URL}/air/CustomerLogin`
     try {
       const response = await axios.post(api , input1);
-    console.log(response.data.msg);
-    localStorage.setItem("name", response.data.Customer.name);
-    localStorage.setItem("email", response.data.Customer.email);
-     alert(response.data.msg);
+    console.log(response.data);
+    // localStorage.setItem("name", response.data.Customer.name);
+    // localStorage.setItem("email", response.data.Customer.email);
     navigate("/");
     setShow1(false);
     } catch (error) {
