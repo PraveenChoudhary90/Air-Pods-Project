@@ -21,7 +21,7 @@ function AdminDashboard() {
    Welcome to Admin Dahsboard
    </marquee>
    </div>
-   <h5 style={{backgroundColor:"lightgray", textAlign:"right", padding:"10px"}}>Welcome to{localStorage.getItem("name")}</h5>
+   <h5 style={{backgroundColor:"lightgray", textAlign:"right", padding:"10px"}}>Welcome to {localStorage.getItem("name")}</h5>
    <h5 style={{backgroundColor:"lightblue", textAlign:"right", padding:"10px"}}>Gmail:{localStorage.getItem("email")}</h5>
 
       
