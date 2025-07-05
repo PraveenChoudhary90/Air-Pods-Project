@@ -67,8 +67,7 @@ const HandelInput1 = (e)=>{
     try {
       const response = await axios.post(api , input1);
     console.log(response.data);
-    // localStorage.setItem("name", response.data.Customer.name);
-    // localStorage.setItem("email", response.data.Customer.email);
+    localStorage.setItem("token", response.data.token);
     navigate("/");
     setShow1(false);
     } catch (error) {

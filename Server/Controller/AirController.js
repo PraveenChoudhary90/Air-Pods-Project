@@ -63,8 +63,27 @@ const Adminlogin = async(req,res)=>{
 }
 
 
+const userauthenticate = async(req,res)=>{
+    const { authorization } = req.headers;
+    const token = authorization.split(" ")[1];
+     try {
+        const decodedToken = jwt.verify(token,  process.env.JWT_SECRET);
+        console.log(decodedToken.id);
+      const Customer = await UserModel.findById(decodedToken.id).select("-password");
+
+      console.log(Customer);
+
+      res.status(200).send(Customer);
+     
+    } catch (error) {
+         console.log(error);
+     }
+
+}
+
 module.exports = {
     InsertUser,
     Adminlogin,
-    CustomerLogin
+    CustomerLogin,
+    userauthenticate
 }

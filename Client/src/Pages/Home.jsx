@@ -2,9 +2,44 @@ import Carousel from 'react-bootstrap/Carousel';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { VscStarEmpty } from "react-icons/vsc";
+import BASE_URL from '../config/BaseUrl';
+import { useEffect } from 'react';
+import axios from 'axios';
 
 
 function Home(){
+
+     
+  const customerAunthenticate=async()=>{
+
+    const token=localStorage.getItem("token");
+     if (token)
+     {
+         let api=`${BASE_URL}/air/userauthenticate`;
+
+         const response =await axios.get(api, {
+          headers: { Authorization: `Bearer ${token}` },
+        })
+
+        console.log(response.data);
+        localStorage.setItem("username", response.data.name);
+        localStorage.setItem("useremail", response.data.email);
+        localStorage.setItem("userid", response.data._id);
+     }
+   }
+
+
+   useEffect(()=>{
+   customerAunthenticate();
+   },[]);
+
+
+
+
+
+
+
+
     return(
         <>
         <h1 style={{backgroundColor:"lightpink"}}>
