@@ -41,7 +41,7 @@ const HandelInput = (e)=>{
     localStorage.setItem("name", response.data.Admin.name);
     localStorage.setItem("email", response.data.Admin.email);
      alert(response.data.msg);
-    navigate("/admindashboard");
+    navigate("/admin");
     setShow(false);
     } catch (error) {
       alert(error.response.data.msg);
