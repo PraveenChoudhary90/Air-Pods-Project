@@ -97,4 +97,7 @@
 #AddProduct{
   box-shadow: 0px 0px 9px;
   padding: 40px;
+  border: 1px solid black;
+  margin-bottom: 30px;
+  border-radius: 20px;
 }
