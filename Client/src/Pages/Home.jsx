@@ -54,7 +54,7 @@ function Home(){
         <VscStarEmpty />
         <VscStarEmpty />
         </div>
-        <Button variant="warning" onClick={()=>(dispatch(Addtocart({key:key._id,
+        <Button variant="warning" onClick={()=>(dispatch(Addtocart({id:key._id,
            name:key.name, brand:key.brand, color:key.color, price:key.price, 
            description:key.description,defaultImage:key.defaultImage, image:key.image, qty:1 })))}>Add To Cart</Button>
         </div>
