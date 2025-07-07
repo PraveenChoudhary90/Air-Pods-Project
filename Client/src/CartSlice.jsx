@@ -19,9 +19,13 @@ const mycart = createSlice({
         state.cart.push(actions.payload);
        }
     }
-}
+},
+     DeleteProduct:(state, actions)=>{
+       state.cart=state.cart.filter(key=>key.id!=actions.payload.id);
+       alert("Your Added Product is Deleted Successfully");
+ }
 })
 
 
-export const {Addtocart} = mycart.actions;
+export const {Addtocart, DeleteProduct} = mycart.actions;
 export default mycart.reducer;
