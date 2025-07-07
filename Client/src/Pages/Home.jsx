@@ -5,9 +5,24 @@ import { VscStarEmpty } from "react-icons/vsc";
 import BASE_URL from '../config/BaseUrl';
 import { useEffect } from 'react';
 import axios from 'axios';
+import { useState } from 'react';
 
 
 function Home(){
+
+  const [mydata, setMydata] = useState([]);
+
+  const LoadData = async ()=>{
+    const api = `${BASE_URL}/air/DisplayProduct`;
+    const response = await axios.get(api);
+    console.log(response.data);
+    setMydata(response.data);
+
+  }
+
+  useEffect(()=>{
+    LoadData();
+  },[]);
 
      
   const customerAunthenticate=async()=>{
