@@ -5,6 +5,8 @@ import Table from 'react-bootstrap/Table';
 import { useNavigate } from 'react-router-dom';
 import { RemoveProduct } from './CartSlice';
 import Button from 'react-bootstrap/Button';
+import { FaPlus } from "react-icons/fa";
+import { FaMinus } from "react-icons/fa";
 
 
 function Cartdata() {
@@ -25,7 +27,11 @@ let count = 0;
             <td>{key.name}</td>
             <td>{key.brand}</td>
             <td>{key.color}</td>
-            <td>{key.description}</td>
+            <td>
+            <FaMinus />
+            {key.description}
+            <FaPlus />
+            </td>
             <td>{key.qty}</td>
             <td>{key.price}</td>
             <td>
@@ -49,7 +55,9 @@ let count = 0;
           <th>Name</th>
           <th>Brand</th>
           <th>Color</th>
-          <th>Description</th>
+          <th>
+            Description  
+            </th>
           <th>Qunatity</th>
           <th>Price</th>
           <th>Delete</th>
