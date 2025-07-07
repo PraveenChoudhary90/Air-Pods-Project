@@ -6,10 +6,14 @@ import BASE_URL from '../config/BaseUrl';
 import { useEffect } from 'react';
 import axios from 'axios';
 import { useState } from 'react';
+import { useDispatch } from "react-redux";
+import { Addtocart } from '../CartSlice';
 
 
 function Home(){
 
+    const dispatch = useDispatch();
+    
   const [mydata, setMydata] = useState([]);
 
   const LoadData = async ()=>{
@@ -50,7 +54,9 @@ function Home(){
         <VscStarEmpty />
         <VscStarEmpty />
         </div>
-        <Button variant="warning">Add To Cart</Button>
+        <Button variant="warning" onClick={()=>(dispatch(Addtocart({key:key._id,
+           name:key.name, brand:key.brand, color:key.color, price:key.price, 
+           description:key.description,defaultImage:key.defaultImage, image:key.image, qty:1 })))}>Add To Cart</Button>
         </div>
       </Card.Body>
     </Card>
