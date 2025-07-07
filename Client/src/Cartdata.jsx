@@ -3,11 +3,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import BASE_URL from './config/BaseUrl';
 import Table from 'react-bootstrap/Table';
 import { useNavigate } from 'react-router-dom';
-import { DeleteProduct } from './CartSlice';
+import { RemoveProduct } from './CartSlice';
+import Button from 'react-bootstrap/Button';
+
 
 function Cartdata() {
- const Product = useSelector(state=>state.mycart.cart);
     const dispatch = useDispatch();
+ const Product = useSelector(state=>state.mycart.cart);
     const navigate = useNavigate();
 
 let count = 0;
@@ -27,7 +29,7 @@ let count = 0;
             <td>{key.qty}</td>
             <td>{key.price}</td>
             <td>
-                <a href="#" onClick={()=>{dispatch(DeleteProduct({id:key.id}))}} >Delete</a>
+                <Button  variant="primary" onClick={()=>{dispatch(RemoveProduct({id:key.id}))}} >Delete</Button>
              </td>
         </tr>
         </>
@@ -38,6 +40,7 @@ let count = 0;
   return (
     <>
     <h1>Cart Data Page</h1>
+    <Button style={{float:"right", margin:"20px"}} variant='warning'> Check Out To Payment</Button>
     <Table striped bordered hover>
       <thead>
         <tr>
