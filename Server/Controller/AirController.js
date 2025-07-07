@@ -1,4 +1,5 @@
 const AirModel = require("../Model/AirModel");
+const ProductModel = require("../Model/ProductModel");
 const UserModel = require("../Model/UserModel");
 const jwt =require("jsonwebtoken");
 
@@ -93,7 +94,7 @@ const InsertProduct = async(req,res)=>{
         color:color,
         description:description,
         defaultImage:ImageUrl[0],
-        images:ImageUrl
+        image:ImageUrl
     })
     console.log(Product);
     res.status(200).send({msg:"Product Is Inserted Successfully"});
