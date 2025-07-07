@@ -100,11 +100,18 @@ const InsertProduct = async(req,res)=>{
     res.status(200).send({msg:"Product Is Inserted Successfully"});
 }
 
+const DisplayProduct =async(req,res)=>{
+    const Product  =await ProductModel.find();
+    res.send(Product);
+    
+}
+
 
 module.exports = {
     InsertUser,
     Adminlogin,
     CustomerLogin,
     userauthenticate,
-    InsertProduct
+    InsertProduct,
+    DisplayProduct
 }
