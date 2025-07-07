@@ -24,6 +24,40 @@ function Home(){
     LoadData();
   },[]);
 
+
+
+
+
+  const ans  =mydata.map(key=>{
+    return(
+      <>
+       
+       <Card style={{ width: '24rem' }}>
+      <Card.Img variant="top" src={`${BASE_URL}/${key.defaultImage}`} width="400px" height="400px"/>
+      <Card.Body>
+        <Card.Title>Name:{key.name}</Card.Title>
+        <Card.Text>
+          Brand:{key.brand}<br></br>
+          Color:{key.color}<br></br>
+          Des:{key.description}<br></br>
+          Price:{key.price}
+        </Card.Text>
+        <div id="star">
+            <div id="star1">
+        <VscStarEmpty />
+        <VscStarEmpty />
+        <VscStarEmpty />
+        <VscStarEmpty />
+        <VscStarEmpty />
+        </div>
+        <Button variant="warning">Add To Cart</Button>
+        </div>
+      </Card.Body>
+    </Card>
+      </>
+    )
+  })
+
      
   const customerAunthenticate=async()=>{
 
@@ -91,7 +125,9 @@ function Home(){
       </Carousel.Item>
     </Carousel>
 
-  <h1>data will come from backend!!!!!!!!!!!!</h1>
+  <div id="cards" style={{fontSize:"20px"}}>
+    {ans}
+  </div>
 
     <div id="cards">
     <Card style={{ width: '25rem', height:"570px" }}>
