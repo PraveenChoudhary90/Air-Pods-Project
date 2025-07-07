@@ -7,6 +7,7 @@ import About from './Pages/About'
 import Registration from './Pages/Registration'
 import AdminDashboard from './Admin/AdminDashboard'
 import AddtoProduct from './Admin/AddtoProduct'
+import Cartdata from './Cartdata'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
      <Route path='home' element={<Home/>}/>
      <Route path='about' element={<About/>}/>
      <Route path='registration' element={<Registration/>}/>
+     <Route path='cartdata' element={<Cartdata/>}/>
      </Route>
    </Routes>
 

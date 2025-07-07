@@ -12,6 +12,7 @@ import { FaHeart } from "react-icons/fa";
 import BASE_URL from "../config/BaseUrl";
 import axios from "axios";
 import { MdLocalGroceryStore } from "react-icons/md";
+import { useSelector } from 'react-redux';
 const TopNav = ()=>{
   const [input, setInput] = useState("");
   const [input1, setInput1] = useState("");
@@ -25,6 +26,10 @@ const TopNav = ()=>{
   const [show1, setShow1] = useState(false);
   const handleClose1 = () => setShow1(false);
   const handleShow1 = () => setShow1(true);
+
+
+  const ProductLength = useSelector(state=>state.mycart.cart);
+  console.log(ProductLength);
 
 const HandelInput = (e)=>{
   const name= e.target.name;
@@ -98,7 +103,7 @@ const HandelInput1 = (e)=>{
             <Nav.Link  as={Link}  to="registration">Registration</Nav.Link>
           </Nav>
           <div id="icon">
-          <MdLocalGroceryStore />
+          <MdLocalGroceryStore/>{ProductLength}
           <FaRegUser onClick={handleShow1} />
           <FaHeart />
           <FaUserCircle onClick={handleShow} />
