@@ -8,12 +8,13 @@ const bodyParser = require("body-parser");
 const AirRoute = require("./Routes/AirRoute");
 
 app.use(cors());
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 // Parse incoming requests with JSON payloads
 app.use(bodyParser.json());
 
 // Parse incoming requests with urlencoded payloads
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 
 mongoose.connect(process.env.CONNECTION_STRING).then(()=>{

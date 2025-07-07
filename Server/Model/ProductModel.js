@@ -6,7 +6,7 @@ const ProductSchema = new mongoose.Schema({
     color:String,
     description:String,
     defaultImage:String,
-    image:String
+    image:[String]
 })
 
 
