@@ -1,7 +1,11 @@
 #nav{
   font-weight: bold;
   color: black;
+  width: 100%;
 }
+
+
+
 
 #cards{
   display: grid;
