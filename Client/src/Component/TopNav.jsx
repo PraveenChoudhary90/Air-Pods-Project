@@ -28,8 +28,9 @@ const TopNav = ()=>{
   const handleShow1 = () => setShow1(true);
 
 
-  const ProductLength = useSelector(state=>state.mycart.cart);
-  console.log(ProductLength);
+  const Product = useSelector(state=>state.mycart.cart);
+  const ProductLength = Product.length;
+  console.log(Product);
 
 const HandelInput = (e)=>{
   const name= e.target.name;
@@ -103,7 +104,7 @@ const HandelInput1 = (e)=>{
             <Nav.Link  as={Link}  to="registration">Registration</Nav.Link>
           </Nav>
           <div id="icon">
-          <MdLocalGroceryStore/>{ProductLength}
+          <span><MdLocalGroceryStore/>{ProductLength}</span>
           <FaRegUser onClick={handleShow1} />
           <FaHeart />
           <FaUserCircle onClick={handleShow} />
