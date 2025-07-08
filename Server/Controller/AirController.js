@@ -5,12 +5,13 @@ const jwt =require("jsonwebtoken");
 
 
 const InsertUser = async(req,res)=>{
-    const {name,email,city,number,password} = req.body;
+    const {name,email,city,address,number,password} = req.body;
     try {
         const User = await UserModel.create({
             name:name,
             email:email,
             city:city,
+            address:address,
             number:number,
             password:password
         })

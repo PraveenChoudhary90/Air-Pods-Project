@@ -56,6 +56,11 @@ const HandelSubmit = async(e)=>{
         <Form.Control type="text" name='city' value={input.city} onChange={HandelInput} />
       </Form.Group>
 
+      <Form.Group className="mb-3" controlId="formBasicPasswordg">
+        <Form.Label>Enter Address</Form.Label>
+        <Form.Control type="text" name='address' value={input.address} onChange={HandelInput} />
+      </Form.Group>
+
       <Form.Group className="mb-3" controlId="formBasicPasswordv">
         <Form.Label>Enter Number</Form.Label>
         <Form.Control type="text"name='number' value={input.number} onChange={HandelInput} />

@@ -81,6 +81,7 @@ function Home(){
         localStorage.setItem("useremail", response.data.email);
         localStorage.setItem("userid", response.data._id);
         localStorage.setItem("number", response.data.number);
+        localStorage.setItem("address", response.data.address);
      }
    }
 

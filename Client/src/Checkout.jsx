@@ -119,7 +119,8 @@ useEffect(()=>{
     const handlePay = async () => {
       try {
         const orderURL = "https://e-commerce-laptop-shopping-site.onrender.com/api/payment/orders";
-        const {data} = await axios.post(orderURL,{amount: totalAmount, customername:localStorage.getItem("username"), contact:localStorage.getItem("number"), email:localStorage.getItem("email"), proname:productsName});
+        const {data} = await axios.post(orderURL,{amount: totalAmount, customername:localStorage.getItem("username"), 
+          contact:localStorage.getItem("number"), email:localStorage.getItem("email"),address:localStorage.getItem("address"), proname:productsName});
         console.log(data);
         initPay(data.data);
 
@@ -169,6 +170,8 @@ useEffect(()=>{
           Contact no :  {localStorage.getItem("number")}
           <br />
           Email : {localStorage.getItem("useremail")}
+          <br />
+          Address : {localStorage.getItem("address")}
           <br/>
           <br/>
            <Button onClick={handlePay} > Pay Now!</Button>
