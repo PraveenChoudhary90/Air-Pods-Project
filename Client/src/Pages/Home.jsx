@@ -105,6 +105,7 @@ function Home(){
         </marquee>
         </h1>
 
+      <div id="cl">
         <Carousel>
       <Carousel.Item>
        <img src="bl1.jpg"  alt="frist" width="100%" height="600px"  />
@@ -132,6 +133,7 @@ function Home(){
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
+    </div>
 
   <div id="cards" style={{fontSize:"20px"}}>
     {ans}
