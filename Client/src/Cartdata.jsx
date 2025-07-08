@@ -48,7 +48,7 @@ let count = 0;
   return (
     <>
     <h1>Cart Data Page</h1>
-    <Button style={{float:"right", margin:"20px"}} variant='warning'> Check Out To Payment</Button>
+    <Button style={{float:"right", margin:"20px"}} variant='warning' onClick={()=>{navigate("/checkout")}}> Check Out To Payment</Button>
     <Table striped bordered hover>
       <thead>
         <tr>
