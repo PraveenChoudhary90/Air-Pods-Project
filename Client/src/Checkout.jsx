@@ -45,7 +45,7 @@ const navigate= useNavigate();
 
 
 const loadData=async()=>{
-  let api=`${BASE_URL}/air/getdata?userid=${localStorage.getItem("id")}`;
+  let api=`${BASE_URL}/air/getdata?userid=${localStorage.getItem("_id")}`;
 
   try {
        const response = await axios.get(api);
@@ -72,7 +72,7 @@ const [shoe,setShoe] = useState({
 
 
 useEffect(()=>{
-  if (!localStorage.getItem("id"))
+  if (!localStorage.getItem("userid"))
   {
     alert("Please Login Frist")
      navigate("/");
@@ -119,7 +119,7 @@ useEffect(()=>{
     const handlePay = async () => {
       try {
         const orderURL = "https://e-commerce-laptop-shopping-site.onrender.com/api/payment/orders";
-        const {data} = await axios.post(orderURL,{amount: totalAmount, customername:cusData.name, address:cusData.address, contact:cusData.contact, email:cusData.email, proname:productsName});
+        const {data} = await axios.post(orderURL,{amount: totalAmount, customername:localStorage.getItem("username"), contact:localStorage.getItem("number"), email:localStorage.getItem("email"), proname:productsName});
         console.log(data);
         initPay(data.data);
 
@@ -163,13 +163,11 @@ useEffect(()=>{
 
          <div id="cusdata">
           <h4>::Your All Information::</h4>
-          Customer Name : {cusData.name}
+          Customer Name : {localStorage.getItem("username")}
           <br/>
-          Shipping Address : {cusData.address}
-          <br/>
-          Contact no :  {cusData.contact}
+          Contact no :  {localStorage.getItem("number")}
           <br />
-          Email :  {cusData.email}
+          Email : {localStorage.getItem("useremail")}
           <br/>
           <br/>
            <Button onClick={handlePay} > Pay Now!</Button>
