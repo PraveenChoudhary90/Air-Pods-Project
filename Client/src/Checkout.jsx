@@ -9,7 +9,7 @@ import BASE_URL from "./config/BaseUrl";
 import { cartEmpty } from "./CartSlice";
 
 const CheckOut=()=>{
-const [cusData, setCusData] = useState({});
+// const [cusData, setCusData] = useState({});
 const navigate= useNavigate();
     const Product= useSelector(state=>state.mycart.cart);
     console.log(Product);
@@ -44,18 +44,18 @@ const navigate= useNavigate();
     })
 
 
-const loadData=async()=>{
-  let api=`${BASE_URL}/air/getdata?userid=${localStorage.getItem("_id")}`;
+// const loadData=async()=>{
+//   let api=`${BASE_URL}/air/getdata?userid=${localStorage.getItem("_id")}`;
 
-  try {
-       const response = await axios.get(api);
-       console.log(response.data);
-       setCusData(response.data);
-  } catch (error) {
-     console.log(error);
-  }
+//   try {
+//        const response = await axios.get(api);
+//        console.log(response.data);
+//        setCusData(response.data);
+//   } catch (error) {
+//      console.log(error);
+//   }
 
-}
+// }
 
 
 
@@ -77,7 +77,7 @@ useEffect(()=>{
     alert("Please Login Frist")
      navigate("/");
   }
-  loadData();
+  // loadData();
 }, []);
 
 

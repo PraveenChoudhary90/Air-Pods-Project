@@ -107,17 +107,17 @@ const DisplayProduct =async(req,res)=>{
 }
 
 
-const CustomerData =async(req,res)=>{
-    const {userid}=req.query;
-    try {
-        const Customer = await UserModel.findById(userid);
-        res.status(200).send(Customer);
-    } catch (error) {
-        console.log(error);
+// const CustomerData =async(req,res)=>{
+//     const {userid}=req.query;
+//     try {
+//         const Customer = await UserModel.findById(userid);
+//         res.status(200).send(Customer);
+//     } catch (error) {
+//         console.log(error);
         
-    }
+//     }
    
-}
+// }
 
 module.exports = {
     InsertUser,
@@ -126,5 +126,5 @@ module.exports = {
     userauthenticate,
     InsertProduct,
     DisplayProduct,
-    CustomerData
+    // CustomerData
 }
