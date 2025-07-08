@@ -44,8 +44,18 @@ const navigate= useNavigate();
     })
 
 
+
+    useEffect(()=>{
+      if (!localStorage.getItem("userid"))
+      {
+        alert("Please Login Frist")
+         navigate("/");
+      }
+      // loadData();
+    }, []);
+    
 // const loadData=async()=>{
-//   let api=`${BASE_URL}/air/getdata?userid=${localStorage.getItem("_id")}`;
+//   let api=`${BASE_URL}/air/getdata?userid=${localStorage.getItem("id")}`;
 
 //   try {
 //        const response = await axios.get(api);
@@ -71,14 +81,6 @@ const [shoe,setShoe] = useState({
 
 
 
-useEffect(()=>{
-  if (!localStorage.getItem("userid"))
-  {
-    alert("Please Login Frist")
-     navigate("/");
-  }
-  // loadData();
-}, []);
 
 
 
