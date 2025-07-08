@@ -7,6 +7,7 @@ import { DecrementPro, IncrementPro, RemoveProduct } from './CartSlice';
 import Button from 'react-bootstrap/Button';
 import { FaPlus } from "react-icons/fa";
 import { FaMinus } from "react-icons/fa";
+import { HiDocumentCurrencyRupee } from "react-icons/hi2";
 
 
 function Cartdata() {
@@ -15,8 +16,10 @@ function Cartdata() {
     const navigate = useNavigate();
 
 let count = 0;
+var totalamount = 0;
  const ans = Product.map(key=>{
     count++;
+    totalamount+=key.price*key.qty;
     return(
         <>
         <tr>
@@ -36,6 +39,7 @@ let count = 0;
             <FaPlus style={{marginLeft:"20px", fontSize:"20px"}} onClick={()=>{dispatch(IncrementPro({id:key.id}))}} />
               </td>
             <td>{key.price}</td>
+            <td>{key.price*key.qty}</td>
             <td>
                 <Button  variant="primary" onClick={()=>{dispatch(RemoveProduct({id:key.id}))}} >Delete</Button>
              </td>
@@ -48,6 +52,8 @@ let count = 0;
   return (
     <>
     <h1>Cart Data Page</h1>
+    <h4 align="center" style={{color:"green", fontWeight:"bold"}}>
+   TotalPaybleAmount:< HiDocumentCurrencyRupee /> : {totalamount}</h4> 
     <Button style={{float:"right", margin:"20px"}} variant='warning' onClick={()=>{navigate("/checkout")}}> Check Out To Payment</Button>
     <Table striped bordered hover>
       <thead>
@@ -62,6 +68,7 @@ let count = 0;
             </th>
           <th>Qunatity</th>
           <th>Price</th>
+          <th>TotalAmount</th>
           <th>Delete</th>
         </tr>
       </thead>
