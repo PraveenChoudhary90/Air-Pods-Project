@@ -32,7 +32,7 @@ const HandelSubmit = async(e)=>{
 
     return(
         <>
-        <h1 id="mar" style={{backgroundColor:"lightpink",paddingTop:"50px"}}>
+        <h1 id="mar" style={{backgroundColor:"lightpink"}}>
         <marquee behavior="alternate" direction="left">
          Offer:All Products have 15% Discount in Diwali Festival
         </marquee>
