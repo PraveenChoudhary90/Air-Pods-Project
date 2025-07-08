@@ -20,26 +20,16 @@ const mycart = createSlice({
        }
     },
     IncrementPro:(state,actions)=>{
-     for(let i=0;i<state.cart.length;i++){
+     for(let i =0;i<state.cart.length;i++){
         if(state.cart[i].id==actions.payload.id){
             state.cart[i].qty++;
         }
-
      }
 
     },
 
     DecrementPro:(state,actions)=>{
-        for(let i = 0;i<state.cart.length;i++){
-            if(state.cart[i]>=1){
-                alert("You Can't decrese less then 1")
-            }
-            if(state.cart[i].id == actions.payload.id){
-                state.cart[i].qty--;
-
-
-            }
-        }
+       
 
     },
 
@@ -52,5 +42,5 @@ const mycart = createSlice({
     
 
 
-export const {Addtocart, RemoveProduct} = mycart.actions;
+export const {Addtocart,DecrementPro, IncrementPro ,RemoveProduct} = mycart.actions;
 export default mycart.reducer;

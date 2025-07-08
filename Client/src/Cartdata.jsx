@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import BASE_URL from './config/BaseUrl';
 import Table from 'react-bootstrap/Table';
 import { useNavigate } from 'react-router-dom';
-import { RemoveProduct } from './CartSlice';
+import { DecrementPro, IncrementPro, RemoveProduct } from './CartSlice';
 import Button from 'react-bootstrap/Button';
 import { FaPlus } from "react-icons/fa";
 import { FaMinus } from "react-icons/fa";
@@ -28,11 +28,13 @@ let count = 0;
             <td>{key.brand}</td>
             <td>{key.color}</td>
             <td>
-            <FaMinus />
             {key.description}
-            <FaPlus />
             </td>
-            <td>{key.qty}</td>
+            <td>
+            <FaMinus style={{marginRight:"20px", fontSize:"20px"}} onClick={()=>{dispatch(DecrementPro({id:key.id}))}} />
+              {key.qty}
+            <FaPlus style={{marginLeft:"20px", fontSize:"20px"}} onClick={()=>{dispatch(IncrementPro({id:key.id}))}} />
+              </td>
             <td>{key.price}</td>
             <td>
                 <Button  variant="primary" onClick={()=>{dispatch(RemoveProduct({id:key.id}))}} >Delete</Button>
