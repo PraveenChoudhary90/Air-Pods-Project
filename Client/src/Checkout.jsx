@@ -146,6 +146,7 @@ useEffect(()=>{
           <th>Cart Pic</th>
           <th>Product Name</th>
           <th>Brand</th>
+          <th>Color</th>
           <th>Price</th>
           <th>Quantity</th>
           <th> Total </th>

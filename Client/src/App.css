@@ -105,3 +105,14 @@
   margin-bottom: 30px;
   border-radius: 20px;
 }
+
+#table{
+  width: 700px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 360px;
+}
+
+#cusdata{
+  margin-left: 500px;
+}
