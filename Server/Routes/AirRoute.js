@@ -29,7 +29,7 @@ route.get("/userauthenticate", AirController.userauthenticate);
 
 route.post("/InsertProduct",upload.array("image", 10),AirController.InsertProduct);
 route.get("/DisplayProduct", AirController.DisplayProduct);
-
+route.get("/getdata", AirController.CustomerData)
 
 
 

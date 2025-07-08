@@ -48,6 +48,11 @@ const mycart = createSlice({
         state.cart=state.cart.filter(key=>key.id!=actions.payload.id);
         alert("Your Added Product is Deleted Successfully");
   },
+  cartEmpty:(state,actions)=>{
+    
+    state.cart=[]
+
+  }
 }
 
        
@@ -55,5 +60,5 @@ const mycart = createSlice({
     
 
 
-export const {Addtocart,DecrementPro, IncrementPro ,RemoveProduct} = mycart.actions;
+export const {Addtocart,DecrementPro, IncrementPro ,RemoveProduct,cartEmpty} = mycart.actions;
 export default mycart.reducer;

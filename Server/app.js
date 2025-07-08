@@ -6,6 +6,8 @@ require("dotenv").config();
 const path = require('path');
 const bodyParser = require("body-parser");
 const AirRoute = require("./Routes/AirRoute");
+const paymentRoute = require("./Routes/payment");
+
 
 app.use(cors());
 // Parse incoming requests with JSON payloads
@@ -22,6 +24,7 @@ mongoose.connect(process.env.CONNECTION_STRING).then(()=>{
 })
 
 app.use("/air", AirRoute);
+app.use("/api/payment/",paymentRoute);
 
 const port = process.env.PORT;
 
