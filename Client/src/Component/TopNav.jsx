@@ -104,8 +104,8 @@ const HandelInput1 = (e)=>{
             <Nav.Link  as={Link}  to="registration">Registration</Nav.Link>
           </Nav>
           <div id="icon">
-          <FaRegUser onClick={handleShow1} />
           <span><MdLocalGroceryStore onClick={()=>{navigate("/cartdata")}} />{ProductLength}</span>
+          <FaRegUser onClick={handleShow1} />
           <FaHeart />
           <FaUserCircle onClick={handleShow} />
           </div>

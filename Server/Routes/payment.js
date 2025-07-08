@@ -5,15 +5,18 @@ const OrderModel= require("../Model/OrderModel");
 //Creating Order
 
 router.post("/orders",async(req,res) => {
-const {amount, customername, address, contact, email, proname }=req.body;
- const Order= await OrderModel.create({
-    name:proname,
-    totalamount:amount, 
-    customername:customername,
-    address:address,
-    contact:contact,
-    email:email
- })
+
+    console.log(req.body);
+    res.send("okk");
+// const {amount, customername, address, contact, email, proname }=req.body;
+//  const Order= await OrderModel.create({
+//     name:proname,
+//     totalamount:amount, 
+//     customername:customername,
+//     address:address,
+//     contact:contact,
+//     email:email
+//  })
 
     try {
         const instance = new Razorpay({
