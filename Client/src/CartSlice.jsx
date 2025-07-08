@@ -29,7 +29,18 @@ const mycart = createSlice({
     },
 
     DecrementPro:(state,actions)=>{
-       
+    for(let i =0;i<state.cart.length;i++){
+    if(state.cart[i].id==actions.payload.id){
+        if(state.cart[i].qty<=1){
+            alert("not less then one")
+        }
+        else{
+            state.cart[i].qty--;
+        }
+    }
+
+}
+     
 
     },
 
@@ -38,6 +49,8 @@ const mycart = createSlice({
         alert("Your Added Product is Deleted Successfully");
   },
 }
+
+       
 });
     
 
