@@ -55,6 +55,7 @@ var totalamount = 0;
     <h4 align="center" style={{color:"green", fontWeight:"bold"}}>
    TotalPaybleAmount:< HiDocumentCurrencyRupee /> : {totalamount}</h4> 
     <Button style={{float:"right", margin:"20px"}} variant='warning' onClick={()=>{navigate("/checkout")}}> Check Out To Payment</Button>
+    <div id="table1">
     <Table striped bordered hover>
       <thead>
         <tr>
@@ -76,6 +77,7 @@ var totalamount = 0;
         {ans}
         </tbody>
         </Table>
+        </div>
     </>
   )
 }
