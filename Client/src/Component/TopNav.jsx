@@ -77,6 +77,8 @@ const HandelInput1 = (e)=>{
     localStorage.setItem("token", response.data.token);
     navigate("/");
     setShow1(false);
+    alert("your are login")
+    
     } catch (error) {
       alert(error.response.data.msg);
       
