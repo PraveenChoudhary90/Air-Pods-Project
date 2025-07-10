@@ -13,6 +13,8 @@ import BASE_URL from "../config/BaseUrl";
 import axios from "axios";
 import { MdLocalGroceryStore } from "react-icons/md";
 import { useSelector } from 'react-redux';
+import Dropdown from 'react-bootstrap/Dropdown';
+
 const TopNav = ()=>{
   const [input, setInput] = useState("");
   const [input1, setInput1] = useState("");
@@ -87,6 +89,11 @@ const HandelInput1 = (e)=>{
  }
 
 
+ const Logout = ()=>{
+  localStorage.clear();
+  navigate("/")
+ }
+
 
     return(
         <>
@@ -105,6 +112,7 @@ const HandelInput1 = (e)=>{
             <Nav.Link  as={Link}  to="about">About</Nav.Link>
             <Nav.Link  as={Link}  to="registration">Registration</Nav.Link>
           </Nav>
+          
           <div id="icon">
           <span><MdLocalGroceryStore onClick={()=>{navigate("/cartdata")}} />{ProductLength}</span>
           <FaRegUser onClick={handleShow1} />
@@ -119,7 +127,17 @@ const HandelInput1 = (e)=>{
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="outline-success">Search</Button>
+            <Dropdown>
+      <Dropdown.Toggle variant="success" id="dropdown-basic">
+        Dropdown Button
+      </Dropdown.Toggle>
+
+      <Dropdown.Menu>
+        <Dropdown.Item href="#">Name:{localStorage.getItem("username")}</Dropdown.Item>
+        <Dropdown.Item href="#">Email:{localStorage.getItem("useremail")}</Dropdown.Item>
+        <Button href="#" variant="success" onClick={Logout()}>Logout</Button>
+      </Dropdown.Menu>
+    </Dropdown>
           </Form>
         </Navbar.Collapse>
       </Container>
