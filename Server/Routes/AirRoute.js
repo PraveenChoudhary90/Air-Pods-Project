@@ -31,7 +31,7 @@ route.post("/InsertProduct",upload.array("image", 10),AirController.InsertProduc
 route.get("/DisplayProduct", AirController.DisplayProduct);
 // route.get("/getdata", AirController.CustomerData)
 
-
+route.get("/Orderdetail", AirController.Orderdetail);
 
 
 module.exports = route;

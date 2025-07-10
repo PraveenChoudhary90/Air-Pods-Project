@@ -9,6 +9,7 @@ import AdminDashboard from './Admin/AdminDashboard'
 import AddtoProduct from './Admin/AddtoProduct'
 import Cartdata from './Cartdata'
 import Checkout from './Checkout'
+import Order from './Admin/Order'
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
    <Routes>
     <Route path='admin' element={<AdminDashboard/>}>
     <Route path='addProduct' element={<AddtoProduct/>}/>
+    <Route path='order' element={<Order/>}/>
     
     </Route>
    </Routes>

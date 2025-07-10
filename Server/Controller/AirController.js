@@ -1,4 +1,5 @@
 const AirModel = require("../Model/AirModel");
+const OrderModel = require("../Model/OrderModel");
 const ProductModel = require("../Model/ProductModel");
 const UserModel = require("../Model/UserModel");
 const jwt =require("jsonwebtoken");
@@ -120,6 +121,14 @@ const DisplayProduct =async(req,res)=>{
    
 // }
 
+
+const Orderdetail = async(req,res)=>{
+    const Order = await OrderModel.find();
+    console.log(Order);
+    res.send(Order);
+}
+
+
 module.exports = {
     InsertUser,
     Adminlogin,
@@ -127,5 +136,6 @@ module.exports = {
     userauthenticate,
     InsertProduct,
     DisplayProduct,
+    Orderdetail
     // CustomerData
 }

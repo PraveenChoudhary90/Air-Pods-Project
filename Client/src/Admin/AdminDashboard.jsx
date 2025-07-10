@@ -31,7 +31,7 @@ function AdminDashboard() {
     <Button variant="primary">Admin Dashboard</Button>
     <Button variant="primary" onClick={()=>{navigate("/admin/addProduct")}}>Add to Products</Button>
     <Button variant="primary">Products Details</Button>
-    <Button variant="primary">Order Details</Button>
+    <Button variant="primary" onClick={()=>{navigate("/admin/order")}} >Order Details</Button>
     <Button variant="primary">Admin Inf</Button>
     <Button variant="primary" onClick={logout}>Logout</Button>
     </div>
