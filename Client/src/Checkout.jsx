@@ -101,7 +101,7 @@ const [shoe,setShoe] = useState({
         order_id: data.id,
         handler: async (response) => {
           try {
-            const verifyURL = "https://e-commerce-laptop-shopping-site.onrender.com/api/payment/verify";
+            const verifyURL = "https://air-pods-project.onrender.com/api/payment/verify";
             const {data} = await axios.post(verifyURL,response);
           } catch(error) {
             console.log(error);
@@ -120,7 +120,7 @@ const [shoe,setShoe] = useState({
 
     const handlePay = async () => {
       try {
-        const orderURL = "https://e-commerce-laptop-shopping-site.onrender.com/api/payment/orders";
+        const orderURL = "https://air-pods-project.onrender.com/api/payment/orders";
         const {data} = await axios.post(orderURL,{amount: totalAmount, customername:localStorage.getItem("username"), 
           contact:localStorage.getItem("number"), email:localStorage.getItem("useremail"),address:localStorage.getItem("address"), proname:productsName});
         console.log(data);
