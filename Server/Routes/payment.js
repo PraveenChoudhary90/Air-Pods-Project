@@ -14,6 +14,7 @@ const {amount, customername, address, contact, email, proname }=req.body;
     contact:contact,
     email:email
  })
+ console.log(Order);
 
     try {
         const instance = new Razorpay({
