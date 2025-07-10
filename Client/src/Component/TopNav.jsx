@@ -135,7 +135,7 @@ const HandelInput1 = (e)=>{
       <Dropdown.Menu>
         <Dropdown.Item href="#">Name:{localStorage.getItem("username")}</Dropdown.Item>
         <Dropdown.Item href="#">Email:{localStorage.getItem("useremail")}</Dropdown.Item>
-        <Button href="#" variant="success" onClick={Logout()}>Logout</Button>
+        <Button href="#" variant="success" onClick={Logout}>Logout</Button>
       </Dropdown.Menu>
     </Dropdown>
           </Form>
