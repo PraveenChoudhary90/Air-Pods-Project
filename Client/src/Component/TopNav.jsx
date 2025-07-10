@@ -120,14 +120,7 @@ const HandelInput1 = (e)=>{
           <FaUserCircle onClick={handleShow} />
           </div>
 
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Dropdown>
+          <Dropdown>
       <Dropdown.Toggle variant="success" id="dropdown-basic">
         Dropdown Button
       </Dropdown.Toggle>
@@ -138,6 +131,15 @@ const HandelInput1 = (e)=>{
         <Button href="#" variant="success" onClick={Logout}>Logout</Button>
       </Dropdown.Menu>
     </Dropdown>
+
+          <Form className="d-flex">
+            <Form.Control
+              type="search"
+              placeholder="Search"
+              className="me-2"
+              aria-label="Search"
+            />
+          
           </Form>
         </Navbar.Collapse>
       </Container>
