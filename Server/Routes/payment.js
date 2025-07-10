@@ -149,6 +149,7 @@ const router = express.Router();
 // Create Razorpay Order and Save to DB
 router.post("/orders", async (req, res) => {
     const { amount, customername, address, contact, email, proname } = req.body;
+    console.log(req.body);
 
     try {
         const instance = new Razorpay({

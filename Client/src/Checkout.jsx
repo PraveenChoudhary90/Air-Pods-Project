@@ -122,7 +122,7 @@ const [shoe,setShoe] = useState({
       try {
         const orderURL = "https://e-commerce-laptop-shopping-site.onrender.com/api/payment/orders";
         const {data} = await axios.post(orderURL,{amount: totalAmount, customername:localStorage.getItem("username"), 
-          contact:localStorage.getItem("number"), email:localStorage.getItem("email"),address:localStorage.getItem("address"), proname:productsName});
+          contact:localStorage.getItem("number"), email:localStorage.getItem("useremail"),address:localStorage.getItem("address"), proname:productsName});
         console.log(data);
         initPay(data.data);
 
